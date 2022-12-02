@@ -1,0 +1,15 @@
+//start script execution 
+.execute database script <|
+// Create GeoLite2 table with schema
+.create-merge table GeoLite2(
+cidr_block:string,
+geoname_id:string,
+continent_code:string,
+continent_name:string,
+country_iso_code:string,
+country_name:string,
+is_anonymous_proxy:string,
+is_satellite_provider:string
+)
+// Import GeoLite2 data from github
+.ingest into table GeoLite2 ('https://raw.githubusercontent.com/datasets/geoip2-ipv4/master/data/geoip2-ipv4.csv') with (ignoreFirstRecord=true)
