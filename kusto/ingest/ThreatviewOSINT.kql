@@ -1,0 +1,8 @@
+//start script execution 
+.execute database script <|
+    // Create ThreatView_OSINT table with schema
+    .create-merge table ThreatView_OSINT(
+        IP_Addr: string
+        )
+    // Import Threat view open source intel feed data from threatview.io
+    .ingest into table ThreatView_OSINT ('https://threatview.io/Downloads/Experimental-IOC-Tweets.txt') with (ignoreFirstRecord=true)
