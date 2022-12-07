@@ -1,6 +1,6 @@
-//Set ThreatviewBlockListTable as external data
-let ThreatviewBlockListTable = externaldata (
+//Set ThreatviewIpBlockListTable as external data
+let ThreatviewIpBlockListTable = externaldata (
     IP_Addr: string
     ) [h@'https://threatview.io/Downloads/IP-High-Confidence-Feed.txt'] //Get the data from threatview 
     with (format=csv, ignorefirstrecord=true);
-ThreatviewBlockListTable
+ThreatviewIpBlockListTable
