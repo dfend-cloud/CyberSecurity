@@ -1,0 +1,13 @@
+//start script execution 
+.execute database script <|
+    // Create ThreatviewC2 table with schema
+    .create-merge table ThreatviewC2(
+        IP_Addr: string,
+        DetectionDate: string,
+        Host: string,
+        Protocol: string,
+        BeaconConfig: string,
+        Comment: string 
+        )
+    // Import ThreatviewC2 data from github
+    .ingest into table ThreatviewC2 ('https://threatview.io/Downloads/High-Confidence-CobaltStrike-C2%20-Feeds.txt') with (ignoreFirstRecord=true, format="csv")
