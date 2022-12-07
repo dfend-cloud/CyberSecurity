@@ -1,13 +1,13 @@
-//Set the table as external data
+//Set GeoLite2Table as external data
 let GeoLite2Table = externaldata (
-cidr_block:string,
-geoname_id:string,
-continent_code:string,
-continent_name:string,
-country_iso_code:string,
-country_name:string,
-is_anonymous_proxy:string,
-is_satellite_provider:string
-) [ h@'https://raw.githubusercontent.com/datasets/geoip2-ipv4/master/data/geoip2-ipv4.csv'] //Get the data from Github
-with (format=csv, ignorefirstrecord=true);
+    cidr_block: string,
+    geoname_id: string,
+    continent_code: string,
+    continent_name: string,
+    country_iso_code: string,
+    country_name: string,
+    is_anonymous_proxy: string,
+    is_satellite_provider: string
+    ) [h@'https://raw.githubusercontent.com/datasets/geoip2-ipv4/master/data/geoip2-ipv4.csv'] //Get the data from Github
+    with (format=csv, ignorefirstrecord=true);
 GeoLite2Table
