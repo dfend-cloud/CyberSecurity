@@ -1,0 +1,6 @@
+//Set ThreatviewDomainBlockListTable as external data
+let ThreatviewDomainBlockListTable = externaldata (
+    Domain: string
+    ) [h@'https://threatview.io/Downloads/DOMAIN-High-Confidence-Feed.txt'] //Get the data from threatview 
+    with (ignorefirstrecord=true);
+ThreatviewDomainBlockListTable
