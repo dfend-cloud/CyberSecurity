@@ -1,0 +1,7 @@
+//Set Threatview_OSINT_Table as external data
+let Threatview_OSINT_Table = externaldata (
+    IP_Addr: string
+    ) [h@'https://threatview.io/Downloads/Experimental-IOC-Tweets.txt'] //Get the data from threatview 
+    with (format=txt, ignorefirstrecord=true);
+Threatview_OSINT_Table
+| where IP_Addr !startswith "#"
