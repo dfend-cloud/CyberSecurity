@@ -1,0 +1,11 @@
+//Set ThreatviewC2Table as external data
+let ThreatviewC2Table = externaldata (
+    IP_Addr: string,
+    DetectionDate: string,
+    Host: string,
+    Protocol: string,
+    BeaconConfig: string,
+    Comment: string 
+    ) [h@'https://threatview.io/Downloads/High-Confidence-CobaltStrike-C2%20-Feeds.txt'] //Get the data from threatview 
+    with (format=csv, ignorefirstrecord=true);
+ThreatviewC2Table
