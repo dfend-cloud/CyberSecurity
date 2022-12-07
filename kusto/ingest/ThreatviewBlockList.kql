@@ -1,0 +1,8 @@
+//start script execution 
+.execute database script <|
+    // Create ThreatviewBlockList table with schema
+    .create-merge table ThreatviewBlockList(
+        IP_Addr: string
+        )
+    // Import ThreatviewBlockList data from threatview
+    .ingest into table ThreatviewBlockList ('https://threatview.io/Downloads/IP-High-Confidence-Feed.txt') with (ignoreFirstRecord=true, format="csv")
