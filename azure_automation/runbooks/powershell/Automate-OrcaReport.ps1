@@ -33,8 +33,6 @@ Email subject.
 .PARAMETER VaultName
 Key vault name which contains SendGrip API Key
 
-.LINK
-https://github.com/decturau/Automation/blob/master/Azure/AutomateORCA/SendGripReport.ps1
 #>
 Param(
     [Parameter(Mandatory = $true)]
