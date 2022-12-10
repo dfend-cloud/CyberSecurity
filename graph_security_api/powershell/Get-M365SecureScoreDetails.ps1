@@ -1,7 +1,7 @@
 <#
 
 .Synopsis
-Obtain Microsoft 365 Defender Secure Score using Graph API. 
+Obtain Microsoft 365 Defender Secure Score using the Graph Security API. 
 
 .Description
 Connect to Microsoft Graph API using PowerShell and pull all secure score data. Data is processed to calculate score in points and percentages. 
