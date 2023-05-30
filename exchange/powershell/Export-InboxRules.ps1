@@ -26,5 +26,5 @@ $Count = 0
 foreach ($Mailbox in $allMailboxes){
     $Count++
     Write-Progress -Activity "Collecting InboxRules for $($Mailbox.UserPrincipalName)" -CurrentOperation $Mailbox -PercentComplete (($Count / $allMailboxes.count) * 100)
-    Get-InboxRule -Mailbox $($Mailbox.UserPrincipalName) | Select-Object -Property @{Name="MailboxUPN"; Expression={$($Mailbox.UserPrincipalName)}},* `| Export-Csv $csvPath\InboxRuleExport.csv -Append -NoTypeInformation
+    Get-InboxRule -Mailbox $($Mailbox.UserPrincipalName) | Select-Object -Property @{Name="MailboxUPN"; Expression={$($Mailbox.UserPrincipalName)}},* | Export-Csv $csvPath\InboxRuleExport.csv -Append -NoTypeInformation
 }
